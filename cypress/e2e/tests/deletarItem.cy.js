@@ -1,8 +1,6 @@
 /// <reference types="cypress" />
 
-import telaInicial from '../../support/pageObjects/tela-inicial.pageObjects'
-const elements = require('../../support/elements/tela-inicial.elements').ELEMENTS
-const items = require('../../support/elements/tela-inicial.elements').ITEMS
+import homePage from '../../fixtures/pages/homePage'
 
 //nome da feature
 describe('Validar os filtros da aplicação após adição dos itens', () => {
@@ -12,13 +10,13 @@ describe('Validar os filtros da aplicação após adição dos itens', () => {
         var todoItems = ["Item 1" ,"Item 2", "Item 3"]
         
         todoItems.forEach(function(item){
-            telaInicial.inputText(elements.inputToDo, item)
+            homePage.inputText(item)
         })
     })
     //caso de teste
     it('Deleção de um item da lista', () => {
-        // telaInicial.destroyItem(items.buttonDestroy)
+        // homePage.destroyItem(items.buttonDestroy)
         // ou 
-        telaInicial.destroyItem(items.divItems)
+        homePage.destroyItem()
     });
 })

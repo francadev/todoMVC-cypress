@@ -1,8 +1,6 @@
 /// <reference types="cypress" />
 
-import telaInicial from '../../support/pageObjects/tela-inicial.pageObjects'
-const elements = require('../../support/elements/tela-inicial.elements').ELEMENTS
-const items = require('../../support/elements/tela-inicial.elements').ITEMS
+import homePage from '../../fixtures/pages/homePage'
 
 //nome da feature
 describe('Concluir itens na minha lista de toDo', () => {
@@ -12,12 +10,11 @@ describe('Concluir itens na minha lista de toDo', () => {
         var todoItems = ["Item 1" ,"Item 2", "Item 3"]
         
         todoItems.forEach(function(item){
-            telaInicial.inputText(elements.inputToDo, item)
+            homePage.inputText(item)
         })
     })
-
     //caso de teste
     it('Concluir um item da lista', () => {
-        telaInicial.checkItem(items.buttonConcluir)
+        homePage.checkItem()
     });
 })
