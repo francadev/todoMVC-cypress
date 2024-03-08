@@ -1,0 +1,10 @@
+{
+  "name": "todomvc-cypress",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Rafael França",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^13.6.6"
+  }
+}
